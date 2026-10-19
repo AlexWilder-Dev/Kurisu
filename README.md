@@ -45,9 +45,9 @@ npm run build    # outputs dist/
 
 ## Deploy
 
-The Vite base path is `/kurisu-omakase/`, and the absolute URLs in `index.html` point to `https://alexwilder-dev.github.io/kurisu-omakase/`. Serve it from a repository named `kurisu-omakase`. If you serve it under another path, change `base` in `vite.config.ts` and the URLs in `index.html` to match.
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to the repository's default branch. Pages must be set to "GitHub Actions" as the source.
 
-`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. Turn on Pages with "GitHub Actions" as the source.
+By default the base path is `/kurisu-omakase/`, and `index.html` holds absolute URLs to `https://alexwilder-dev.github.io/kurisu-omakase/`. In CI, `actions/configure-pages` reports the real Pages URL and the build uses it for both the base path and those absolute link-preview URLs. So the site works whatever the repository is called, and keeps working if it's renamed.
 
 The demo ping at the bottom of `index.html` posts to `https://ntfy.sh/YOUR-NTFY-TOPIC`. Replace that with your own topic.
 

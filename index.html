@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Kurisu Omakase · Eight seats on Atlantic Road, Brixton</title>
+    <meta name="description" content="Put fish on rice and make it nice. Eighteen courses at an eight-seat counter in Brixton, Tuesday to Friday at 6pm and 8.30pm. Chris on the knife, his mum Suwannee on the room. When the next dates drop, the notify list, and what to know before you book." />
+    <meta name="theme-color" content="#3a1c13" />
+    <link rel="canonical" href="https://alexwilder-dev.github.io/kurisu-omakase/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kurisu Omakase" />
+    <meta property="og:title" content="Kurisu Omakase · Eight seats on Atlantic Road, Brixton" />
+    <meta property="og:description" content="Eighteen courses, eight seats, two seatings a night. When the next dates drop, how the notify list works, and what to know before you book." />
+    <meta property="og:url" content="https://alexwilder-dev.github.io/kurisu-omakase/" />
+    <meta property="og:image" content="https://alexwilder-dev.github.io/kurisu-omakase/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A torched nigiri on black slate beside the Kurisu Omakase logo: a cartoon of chef Chris in a backwards cap, arms crossed, holding tuna nigiri and a knife." />
+    <meta property="og:locale" content="en_GB" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kurisu Omakase · Eight seats on Atlantic Road, Brixton" />
+    <meta name="twitter:description" content="Eighteen courses, eight seats, two seatings a night. When the next dates drop, how the notify list works, and what to know before you book." />
+    <meta name="twitter:image" content="https://alexwilder-dev.github.io/kurisu-omakase/og.jpg" />
+    <meta name="twitter:image:alt" content="A torched nigiri on black slate beside the Kurisu Omakase logo: a cartoon of chef Chris in a backwards cap, arms crossed, holding tuna nigiri and a knife." />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://alexwilder-dev.github.io/kurisu-omakase/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://alexwilder-dev.github.io/kurisu-omakase/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&family=Karla:ital,wght@0,400..800;1,400..600&display=swap"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+    (() => {
+      try {
+        if (location.hash === '#me') localStorage.setItem('me', '1');
+        if (localStorage.getItem('me') || sessionStorage.getItem('pinged')) return;
+        sessionStorage.setItem('pinged', '1');
+      } catch (e) {}
+      const v = new URLSearchParams(location.search).get('v') || 'untagged';
+      fetch('https://ntfy.sh/YOUR-NTFY-TOPIC', {
+        method: 'POST', body: `${v} opened ${location.pathname}`, keepalive: true
+      }).catch(() => {});
+    })();
+    </script>
+  </body>
+</html>
